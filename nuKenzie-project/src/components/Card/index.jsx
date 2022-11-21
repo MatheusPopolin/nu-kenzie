@@ -1,3 +1,7 @@
+import "./style.css"
+import "../../styles/fonts.css" 
+import "../../styles/buttons.css"
+
 export const Card = ({transaction, setlist}) => {
     const {description, type, value, id} = transaction
 
@@ -9,12 +13,14 @@ export const Card = ({transaction, setlist}) => {
     }
 
     return (  
-        <li>
-            <h2>{description}</h2>
-            <p>{type}</p>
-            <p>R$ {value}</p>
-            <button onClick={handleTransaction} id={id}></button>
+        <li className={"card " + type}>
+            <div>
+                <h2 className="title-3">{description}</h2>
+                <p className="body">{type}</p>
+            </div>
+            <p className="body">{Math.abs(value).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+            <button className="button-delete" onClick={handleTransaction} id={id}></button>
         </li>
-    );
+    )
 }
  

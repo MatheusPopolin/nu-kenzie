@@ -1,4 +1,8 @@
-import { useState } from "react";
+import { useState } from "react"
+import "./style.css"
+import "../../styles/inputs.css" 
+import "../../styles/select.css"
+import "../../styles/buttons.css"  
 
 export const Form = ({list, setList}) => {
     const [description, setDescription] = useState("")
@@ -7,18 +11,18 @@ export const Form = ({list, setList}) => {
     const [id, setId] = useState(3)
     
     const getDescription = (e)=>{
-        setDescription(e.target.value);
+        setDescription(e.target.value)
     }
     const getValue = (e)=>{
-        setValue(e.target.value);
+        setValue(e.target.value)
     }
     const getType = (e)=>{
-        setType(e.target.value);
+        setType(e.target.value)
     }
 
     const createNewTransaction = (e) => {
-        e.preventDefault();
-        let treatedValue = value;
+        e.preventDefault()
+        let treatedValue = value
         if(type==="saída"){
             treatedValue = treatedValue*-1
         }
@@ -30,26 +34,32 @@ export const Form = ({list, setList}) => {
         }
         setList([...list, newTransaction])
         setId(id+1)
-        e.target.form.reset()
+        e.target.reset()
     }
 
     return (  
-        <form>
-            <label htmlFor="">Descrição</label>
-            <input onChange={getDescription} type="text" placeholder="Digite aqui sua descrição"/>
-            <p>Ex: Compra de roupas</p>
+        <form className="form" onSubmit={createNewTransaction}>
+            <label className="body" htmlFor="description">Descrição</label>
+            <input className="input" id="description" required onChange={getDescription} type="text" placeholder="Digite aqui sua descrição"/>
+            <p className="body">Ex: Compra de roupas</p>
 
-            <label htmlFor="">Valor</label>
-            <input onChange={getValue} type="number"/>
+            <div>
+                <div>
+                    <label className="body" htmlFor="value">Valor</label>
+                    <input className="value-input" id="value" required onChange={getValue} type="number" placeholder="1"/>
+                </div>
+    
+                <div>
+                    <label className="body" htmlFor="type">Tipo de valor</label>
+                    <select className="select" onChange={getType} name="" id="type">
+                        <option value="entrada">Entrada</option>
+                        <option value="saída">Saída</option>
+                    </select>
+                </div>
+            </div>
 
-            <label htmlFor="">Tipo de valor</label>
-            <select onChange={getType} name="" id="">
-                <option value="entrada">Entrada</option>
-                <option value="saída">Saída</option>
-            </select>
-
-            <button onClick={createNewTransaction} type="submit">Inserir valor</button>
+            <button className="button-primary" type="submit">Inserir valor</button>
         </form>
-    );
+    )
 }
  

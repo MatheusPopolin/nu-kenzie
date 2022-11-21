@@ -1,0 +1,41 @@
+.input{
+    height: 3rem;
+    max-width: 100%;
+    padding: 0 1rem; 
+    font-weight: 400;
+    font-size: 1rem;
+    background: var(--grey800);
+    color: var(--grey300);
+    border: none;
+    border-radius: var(--radius-1);
+}
+.input:hover{
+    border: 1.2px solid var(--grey100);
+}
+.input:focus{
+    border: 1.2px solid var(--grey100);
+    background: var(--grey900);
+    color: var(--grey100);
+}
+
+.value-input{
+    height: 3rem;
+    max-width: 100%;
+    padding: 0 1rem;
+    font-weight: 400;
+    font-size: 1rem; 
+    background: var(--grey800);
+    color: var(--grey300);
+    border: none;
+    border-radius: var(--radius-1);
+}
+.value-input:hover{
+    border: 1.2px solid var(--grey100);
+}
+.value-input:focus{
+    border: 1.2px solid var(--grey100);
+}
+
+
+
+

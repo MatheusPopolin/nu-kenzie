@@ -1,4 +1,7 @@
 import { Card } from "../Card"
+import NoCard from "/src/assets/noCard.svg"
+import "./style.css"
+import "../../styles/fonts.css" 
 
 export const List = ({list,actualType, setList}) => {
     if(list.length>0){
@@ -39,9 +42,9 @@ export const List = ({list,actualType, setList}) => {
     
     else{
         return (
-            <section>
-                <h2>Você ainda não possui nenhum lançamento</h2>
-                <img src="/src/assets/noCard.png" alt="ilustração"/>
+            <section className="noCards">
+                <h2 className="title-2">Você ainda não possui nenhum lançamento</h2>
+                <img src={NoCard} alt="ilustração"/>
             </section>
         )
     }    

@@ -4,8 +4,22 @@ import { Home } from './pages/Home'
 import { Initial } from './pages/Initial'
 
 
-function App() {
+export const App = () => {
   const [actualPage, setActualPage] = useState("initial")
+  const [listTransactions, setListTransactions] = useState([
+    { 
+    description: "Salário recebido", 
+    type: "entrada",
+    value: 2500,
+    id: 1 
+    },
+    { 
+    description: "Conta de luz",
+    type: "saída",    
+    value: -150, 
+    id: 2
+    }
+  ])
   
   if(actualPage==="initial"){
     return (
@@ -15,11 +29,11 @@ function App() {
     ) 
   } else{
     return (
-      <div className="App">
-        <Home setPage={setActualPage}></Home>
+      <div className="App-home">
+        <Home setPage={setActualPage} listTransactions={listTransactions} setListTransactions={setListTransactions}></Home>
       </div>
     ) 
   }
 }
 
-export default App
+
