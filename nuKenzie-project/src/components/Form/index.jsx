@@ -34,7 +34,6 @@ export const Form = ({list, setList}) => {
         }
         setList([...list, newTransaction])
         setId(id+1)
-        e.target.reset()
     }
 
     return (  

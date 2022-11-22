@@ -1,7 +1,7 @@
-import { useState } from 'react'
-import './App.css'
-import { Home } from './pages/Home'
-import { Initial } from './pages/Initial'
+import { useState } from "react"
+import "./App.css"
+import { Home } from "./pages/Home"
+import { Initial } from "./pages/Initial"
 
 
 export const App = () => {

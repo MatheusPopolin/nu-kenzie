@@ -18,7 +18,7 @@ export const Card = ({transaction, setlist}) => {
                 <h2 className="title-3">{description}</h2>
                 <p className="body">{type}</p>
             </div>
-            <p className="body">{Math.abs(value).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
+            <p className="body">{Math.abs(value).toLocaleString("pt-br",{style: "currency", currency: "BRL"})}</p>
             <button className="button-delete" onClick={handleTransaction} id={id}></button>
         </li>
     )
