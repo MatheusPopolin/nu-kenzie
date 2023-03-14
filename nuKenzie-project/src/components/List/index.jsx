@@ -18,10 +18,9 @@ export const List = ({list,actualType, setList}) => {
         else if(actualType==="entradas"){
             return (  
                 <ul>
-                    {list.map((transaction, index) =>{
-                        if(transaction.type==="entrada"){
-                            return <Card setlist={setList} transaction={transaction} key={index}/>
-                        }                    
+                    {list.filter(transaction=>transaction.type==="entrada").map((transaction, index) =>{
+                        return <Card setlist={setList} transaction={transaction} key={index}/>
+                                   
                     })}
                 </ul>
             )

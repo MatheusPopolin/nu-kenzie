@@ -1,6 +1,6 @@
 import { Fragment } from "react"
 import Logo from "/src/assets/logo.svg"
-import Illustration from "/src/assets/illustration.svg"
+import Illustration from "../../assets/illustration.svg"
 import "./style.css"
 import "../../styles/buttons.css" 
 import "../../styles/fonts.css" 

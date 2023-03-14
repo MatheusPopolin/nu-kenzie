@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react"
-import Logo from "/src/assets/logoBlack.svg"
+import Logo from "../../img/logoBlack.svg"
 import { Form } from "../../components/Form"
 import { List } from "../../components/List"
 import { TotalMoney } from "../../components/TotalMoney"

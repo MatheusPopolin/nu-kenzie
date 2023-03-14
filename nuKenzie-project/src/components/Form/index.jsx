@@ -23,9 +23,11 @@ export const Form = ({list, setList}) => {
     const createNewTransaction = (e) => {
         e.preventDefault()
         let treatedValue = value
+
         if(type==="saída"){
             treatedValue = treatedValue*-1
         }
+
         const newTransaction = { 
             description: description, 
             type: type, 
@@ -33,7 +35,12 @@ export const Form = ({list, setList}) => {
             id: id 
         }
         setList([...list, newTransaction])
-        setId(id+1)
+
+        
+        e.target.reset()
+        setDescription("")  
+        setValue("")  
+        setType("entrada")
     }
 
     return (  
